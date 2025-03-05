@@ -12,4 +12,10 @@ class CrossEntropyLoss(Loss):
 
     @override
     def gradient(self, y_true, y_pred):
+        """
+        combined with the softmax function
+        :param y_true: the ground truth labels
+        :param y_pred: the predicted labels
+        :return: the gradient of the loss function.
+        """
         return y_true - y_pred
