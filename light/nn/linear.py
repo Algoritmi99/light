@@ -38,4 +38,3 @@ class Linear(Module):
         self.grads = {'weight': d_weight, 'bias': d_bias}
 
         return d_input
-
