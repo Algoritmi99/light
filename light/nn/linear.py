@@ -1,7 +1,7 @@
 import numpy as np
 from overrides import override
 
-from light.nn.module import Module
+from light.nn.base import Module
 
 
 class Linear(Module):

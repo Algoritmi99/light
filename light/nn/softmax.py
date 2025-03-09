@@ -1,7 +1,7 @@
 import numpy as np
 from overrides import override
 
-from light.nn.module import ActivationFunction
+from light.nn.base import ActivationFunction
 
 
 def softmax(x):

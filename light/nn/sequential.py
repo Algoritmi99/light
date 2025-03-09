@@ -2,7 +2,7 @@ from overrides import override
 
 import numpy as np
 
-from light.nn.module import Module
+from light.nn.base import Module
 
 
 class Sequential(Module):

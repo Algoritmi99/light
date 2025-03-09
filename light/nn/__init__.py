@@ -1,4 +1,4 @@
-from light.nn.module import Module, ActivationFunction
+from light.nn.base import Module, ActivationFunction
 from light.nn.linear import Linear
 from light.nn.relu import ReLU
 from light.nn.sigmoid import Sigmoid

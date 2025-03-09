@@ -2,7 +2,7 @@ from overrides import override
 
 import numpy as np
 
-from light.loss.loss import Loss
+from light.loss.base import Loss
 
 
 class CrossEntropyLoss(Loss):

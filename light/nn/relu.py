@@ -2,7 +2,7 @@ from overrides import override
 
 import numpy as np
 
-from light.nn.module import ActivationFunction
+from light.nn.base import ActivationFunction
 
 
 def relu(x):
