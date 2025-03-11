@@ -2,3 +2,10 @@
 
 ## DISCLAIMER :
 The original version of this framework was created for me Machine Learning Final Project of JMU 
+
+
+### Installation
+Install using:
+ ```bash
+   pip install git+https://github.com/Algoritmi99/light.git
+   ```
