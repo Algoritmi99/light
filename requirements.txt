@@ -1,3 +1,4 @@
 numpy~=2.2.3
 overrides~=7.7.0
 setuptools~=76.0.0
+pandas~=2.2.3

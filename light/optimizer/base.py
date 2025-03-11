@@ -1,3 +1,5 @@
+import copy
+
 from light import Linear, Sequential
 from light.loss.base import Loss
 from light.nn.base import Module
@@ -5,7 +7,7 @@ from light.nn.base import Module
 
 class Optimizer:
     def __init__(self, network: Module, loss: Loss, learning_rate: float):
-        self.network = network
+        self.network = copy.deepcopy(network)
         self.loss = loss
         self.learning_rate = learning_rate
         self.__update_factors: dict = {}
