@@ -56,6 +56,9 @@ class Module:
         """
         save_model(self, save_path, file_name)
 
+    def __call__(self, arg: np.ndarray) -> np.ndarray:
+        return self.forward(arg)
+
 class ActivationFunction(Module):
     """
         A common implementation for any activation function.

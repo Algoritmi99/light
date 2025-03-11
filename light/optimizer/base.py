@@ -32,3 +32,6 @@ class Optimizer:
                     if isinstance(layer, Linear):
                         layer.weight += self.__update_factors[id(layer.weight)]
                         layer.bias += self.__update_factors[id(layer.bias)]
+
+    def __call__(self, y_true, y_pred):
+        self.step(y_true, y_pred)

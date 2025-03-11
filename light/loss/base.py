@@ -19,3 +19,6 @@ class Loss(object):
         :return: the gradient of the loss function.
         """
         raise NotImplementedError
+
+    def __call__(self, y_true, y_pred):
+        return self.loss(y_true, y_pred)
