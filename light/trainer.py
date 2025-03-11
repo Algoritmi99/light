@@ -39,4 +39,5 @@ class Trainer:
 
         if plotter is not None:
             plotter.make_plot("Error in Training")
+
         return copy.deepcopy(self.optimizer.network)
