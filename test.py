@@ -61,7 +61,7 @@ def main():
 
     net = ClassificationFNN(
         input_dim=X_train.shape[1],
-        hidden_dim=int(X_train.shape[1] * 0.5),
+        hidden_dim=int(X_train.shape[1] * 0.2),
         output_dim=len(y_train["type"].unique()),
         num_classes=len(y_train["type"].unique())
     )
@@ -78,10 +78,6 @@ def main():
 
     trainer = Trainer(optimizer, plot=True)
     trainer.train((X_train, y_train), 100)
-
-
-
-
 
 if __name__ == '__main__':
     main()
