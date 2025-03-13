@@ -2,7 +2,8 @@ import copy
 
 import pandas as pd
 
-from light import Optimizer, Module, Plotter
+from light import Optimizer, Module
+from light.plotter import Plotter
 
 
 class Trainer:
@@ -31,7 +32,6 @@ class Trainer:
                 x = dataset[0].iloc[idx].to_numpy()
                 y = dataset[1].iloc[idx].to_numpy()
                 y_pred = self.optimizer.network(x)
-
                 if self.plot:
                     plotter.add_data(epoch, self.optimizer.loss(y, y_pred))
 
