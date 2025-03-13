@@ -8,7 +8,8 @@ def sigmoid(x):
 
 
 def sigmoid_prime(x):
-    return (1 / (1 + np.exp(-x))) * (1 - (1 / (1 + np.exp(-x))))
+    s = sigmoid(x)
+    return s * (1 - s)
 
 
 class Sigmoid(ActivationFunction):

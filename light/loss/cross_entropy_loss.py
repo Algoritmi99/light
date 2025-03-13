@@ -18,4 +18,4 @@ class CrossEntropyLoss(Loss):
         :param y_pred: the predicted labels
         :return: the gradient of the loss function.
         """
-        return y_true - y_pred
+        return y_pred - y_true
