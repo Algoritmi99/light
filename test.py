@@ -78,6 +78,7 @@ def main():
     trainer = Trainer(optimizer, plot=True)
     net = trainer.train((X_train, y_train), 600)
 
+    # Accuracy on unseen data
     correct = 0
     false = 0
     for idx in range(len(X_test)):
