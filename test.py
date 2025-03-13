@@ -14,9 +14,9 @@ class ClassificationFNN(light.Module):
             light.Linear(input_dim, hidden_dim),
             light.Sigmoid(),
             light.Linear(hidden_dim, hidden_dim),
-            light.Sigmoid(),
+            light.Tanh(),
             light.Linear(hidden_dim, output_dim),
-            light.Sigmoid(),
+            light.ReLU(),
             light.Linear(output_dim, num_classes),
             light.Softmax()
         )
