@@ -56,8 +56,7 @@ def main():
     scaler.fit(X)
     X_scaled = scaler.transform(X)
 
-    X_train, X_rest, y_train, y_rest = light.train_test_split(X_scaled, y, 0.8)
-    X_test, X_val, y_test, y_val = light.train_test_split(X_rest, y_rest, 0.5)
+    X_train, X_test, y_train, y_test = light.train_test_split(X_scaled, y, 0.8)
 
     net = ClassificationFNN(
         input_dim=X_train.shape[1],
@@ -77,7 +76,7 @@ def main():
     )
 
     trainer = Trainer(optimizer, plot=True)
-    net = trainer.train((X_train, y_train), 100)
+    net = trainer.train((X_train, y_train), 600)
 
     correct = 0
     false = 0
