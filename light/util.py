@@ -64,7 +64,9 @@ class OneHotEncoder:
         self.class_to_index = {cls: i for i, cls in enumerate(class_list)}
 
     def encode(self, labels):
-        """Converts a label, a list of labels, or a pandas DataFrame column into one-hot encoded vectors."""
+        """
+        Converts a label, a list of labels, or a pandas DataFrame column into one-hot encoded vectors.
+        """
         if isinstance(labels, pd.DataFrame):
             labels = labels.squeeze().tolist()
         elif isinstance(labels, str):
@@ -82,7 +84,9 @@ class OneHotEncoder:
         return encoded if len(encoded) > 1 else encoded[0]
 
     def decode(self, one_hot_vectors):
-        """Converts one-hot encoded vectors back into labels, supporting arrays, lists, and DataFrames."""
+        """
+        Converts one-hot encoded vectors back into labels, supporting arrays, lists, and DataFrames.
+        """
         if isinstance(one_hot_vectors, pd.DataFrame):
             one_hot_vectors = one_hot_vectors.values
         elif isinstance(one_hot_vectors, list):
