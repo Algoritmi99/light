@@ -10,7 +10,7 @@ class Linear(Module):
             A fully connected layer of a neural network with a linear activation function.
     """
 
-    def __init__(self, in_features: int, out_features: int, bias: bool = False, init_rand = True):
+    def __init__(self, in_features: int, out_features: int, bias: bool = True, init_rand = True):
         super().__init__()
         self.grads = None
         self.in_features = in_features

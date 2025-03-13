@@ -77,7 +77,18 @@ def main():
     )
 
     trainer = Trainer(optimizer, plot=True)
-    trainer.train((X_train, y_train), 100)
+    net = trainer.train((X_train, y_train), 100)
+
+    correct = 0
+    false = 0
+    for idx in range(len(X_test)):
+        pred_label = one_hot_encoder.decode(net(X_test.iloc[idx].to_numpy()))
+        if pred_label == y_test["type"].iloc[idx]:
+            correct += 1
+        else:
+            false += 1
+    print("Accuracy: {:.2f}%".format(correct * 100 / len(X_test)))
+
 
 if __name__ == '__main__':
     main()

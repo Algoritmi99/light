@@ -1,6 +1,7 @@
 import copy
 
 import pandas as pd
+from tqdm import tqdm
 
 from light import Optimizer, Module
 from light.plotter import Plotter
@@ -15,9 +16,10 @@ class Trainer:
         self.optimizer = optimizer
         self.plot = plot
 
-    def train(self, dataset: tuple[pd.DataFrame, pd.DataFrame], n_epochs: int) -> Module:
+    def train(self, dataset: tuple[pd.DataFrame, pd.DataFrame], n_epochs: int, progress_bar=True) -> Module:
         """
         runs the training loop given a dataset and a number of epochs.
+        :param progress_bar: Flag to choose whether to display progress bar or not.
         :param dataset: tuple of datapoints and ground truth labels.
         :param n_epochs: number of epochs to train for.
         :return: trained model.
@@ -27,7 +29,8 @@ class Trainer:
 
         plotter = Plotter(n_epochs, "Epoch", "Error") if self.plot else None
 
-        for epoch in range(n_epochs):
+        rang = tqdm(range(n_epochs)) if progress_bar else range(n_epochs)
+        for epoch in rang:
             for idx in range(len(dataset[0])):
                 x = dataset[0].iloc[idx].to_numpy()
                 y = dataset[1].iloc[idx].to_numpy()
