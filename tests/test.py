@@ -31,7 +31,7 @@ class ClassificationFNN(light.Module):
 
 
 def main():
-    wine_dataset = pd.read_csv("SampleDataset/Wine.csv", header=None)
+    wine_dataset = pd.read_csv("tests/SampleDataset/Wine.csv", header=None)
     wine_dataset.columns = ['type'
         , 'alcohol'
         , 'malicAcid'
