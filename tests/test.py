@@ -4,6 +4,7 @@ from overrides import override
 
 import light
 import light.feature_scaling as fs
+from light import PCA
 from light.trainer import Trainer
 
 
@@ -56,7 +57,10 @@ def main():
     scaler.fit(X)
     X_scaled = scaler.transform(X)
 
-    X_train, X_test, y_train, y_test = light.train_test_split(X_scaled, y, 0.8)
+    pca = PCA(variance_threshold=0.99)
+    X_transformed = pd.DataFrame(pca.fit_transform(X_scaled))
+
+    X_train, X_test, y_train, y_test = light.train_test_split(X_transformed, y, 0.8)
 
     net = ClassificationFNN(
         input_dim=X_train.shape[1],
